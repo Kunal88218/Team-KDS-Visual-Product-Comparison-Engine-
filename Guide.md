@@ -35,5 +35,3 @@ Alternatively, you can run the provided `.dmg` installer located in `Visual_Prod
 ## Credits
 
 *Developed for the Team KDS Visual Product Comparison Engine.*
-
-- [Edit Credits Here]
