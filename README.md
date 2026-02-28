@@ -52,7 +52,7 @@ Computers cannot recognize images on their own. They require images to be conver
 # Proposed Solution
 
 ## Solution Overview
-A client-side image search engine that performs image feature extraction locally and compares it to existing product embeddings without any cloud API.
+A client-side image search engine that performs image feature extraction locally and compares it to existing product embeddings without any cloud-API.
 
 ## Core Idea
 Images are converted to vector form, compared mathematically, and then compared to find similarity.
