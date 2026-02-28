@@ -87,22 +87,6 @@ User → Frontend → TensorFlow.js → MobileNet → IndexedDB → Similarity E
 
 # Database Design
 
-## ER Diagram
-(Add ER diagram image here)
-
-## ER Diagram Description
-
-Entity: Product
-
-Attributes:
-- product_id (Primary Key)
-- product_name
-- image_path
-- embedding_vector
-
-Each product has one embedding vector used for similarity comparison.
-
----
 
 # Dataset Selected
 
