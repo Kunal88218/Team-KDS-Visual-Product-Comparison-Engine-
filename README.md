@@ -85,9 +85,6 @@ User → Frontend → TensorFlow.js → MobileNet → IndexedDB → Similarity E
 
 ---
 
-# Database Design
-
-
 # Dataset Selected
 
 ## Dataset Name
