@@ -15,12 +15,12 @@ Welcome to the Visual Product Comparison Engine! This application is a fully nat
 Currently, the application is compiled and optimized exclusively for macOS. 
 
 To download and run:
-1. Navigate to the `Visual_Product_Comparer_Desktop/src-tauri/target/release/bundle/macos/` directory within this repository.
-2. Locate the `visual-product-comparer.app` application bundle.
-3. Simply drag or copy `visual-product-comparer.app` to your Mac's `/Applications` folder.
-4. Double-click the application to launch it.
+1. Navigate to the releases on the right side and install the dmg.zip file.
+2. Extract the zip file and move the visual-product-comparer.dmg file to Applications Folder on your mac.
+3. Open terminal and paste this command : chmod +x /Applications/visual-product-comparer.app/Contents/MacOS/visual-product-comparer.
+4. After that double click on the visual-product-comparer in Applications.
 
-Alternatively, you can run the provided `.dmg` installer located in `Visual_Product_Comparer_Desktop/src-tauri/target/release/bundle/dmg/`.
+Alternatively, you can run the provided `.dmg` installer located in `Visual_Product_Comparer_Desktop/src-tauri/target/release/bundle/dmg/` after you download the repo locally or directly.
 
 ## How to Use
 
