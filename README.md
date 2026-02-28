@@ -1,53 +1,300 @@
-# Visual Product Comparer
+# Visual Product Comparison Engine
 
-A fully offline AI visual similarity search web app for apparel images using TensorFlow.js and MobileNet, processing entirely in the client's browser.
+[**🔗 Click here to read the Comprehensive Setup & Features Guide for the new Tauri Desktop App**](Guide.md)
 
-## Features
-- **100% Client-side Processing**: No backend servers or APIs needed.
-- **Offline Capable**: Uses IndexedDB for storing image embeddings.
-- **AI-powered**: Leverages TensorFlow.js and a pre-trained MobileNet model.
-- **Privacy-first**: No images are uploaded to any server. All processing runs locally.
+---
 
-## Project Structure
+## Brief Description
+A completely offline AI-based visual search application that allows the user to upload an image of the product and find visually similar products from the local catalog in an instant by leveraging the power of machine learning.
+
+---
+
+# Problem Statement
+
+## Problem Title
+Offline Visual Product Similarity Search using On-Device Machine Learning
+
+## Problem Description
+The majority of online customers tend to search for the product visually, not by typing the product's name in the search bar. The majority of the visual search applications make use of cloud APIs, resulting in increased latency, cost, and privacy issues. There is no such desktop application that can perform the feature extraction of the images, store the feature vectors, and compare them in an efficient manner without relying on any cloud infrastructure.
+
+## Target Users
+- Online shoppers
+- E-commerce platforms
+- Small & medium retailers
+- Fashion stores
+- Privacy-conscious users
+- Developers building AI tools
+
+## Existing Gaps
+- Cloud dependency
+- High infrastructure cost
+- Privacy risks from image uploads
+- Lack of offline visual search systems
+- Limited client-side ML implementations
+
+---
+
+# Problem Understanding & Approach
+
+## Root Cause Analysis
+Computers cannot recognize images on their own. They require images to be converted to numerical feature vectors (embeddings). Therefore, without efficient feature extraction and comparison, image search is not accurate or efficient.
+
+## Solution Strategy
+- Use TensorFlow.js for local feature extraction
+- Convert images to embeddings using MobileNet
+- Store embeddings in IndexedDB
+- Compare embeddings using cosine similarity
+- Rank and display visually similar products
+- Ensure full offline functionality
+
+---
+
+# Proposed Solution
+
+## Solution Overview
+A client-side image search engine that performs image feature extraction locally and compares it to existing product embeddings without any cloud API.
+
+## Core Idea
+Images are converted to vector form, compared mathematically, and then compared to find similarity.
+
+## Key Features
+- Offline operation
+- Drag-and-drop image upload
+- Real-time similarity comparison
+- Local embedding storage
+- Fast inference
+- Privacy-friendly
+- Lightweight architecture
+
+---
+
+# System Architecture
+
+## High-Level Flow
 ```
-├── index.html                  # Main UI and application entry point
-├── src/
-│   ├── js/
-│   │   ├── app.js              # Main controller logic, UI orchestrator
-│   │   ├── embedding.js        # MobileNet and TF.js wrapper for feature extraction
-│   │   ├── database.js         # IndexedDB operations for storing/retrieving embeddings
-│   │   ├── similarity.js       # Cosine similarity logic to compare embeddings
-│   │   └── datasetLoader.js    # Logic for loading public/dataset images dynamically
-│   └── styles/
-│       └── style.css           # Styling
-├── public/
-│   └── dataset/                # Initial apparel image dataset (JPG/JPEG)
-├── package.json
-└── README.md
+User → Frontend → TensorFlow.js → MobileNet → IndexedDB → Similarity Engine → Results
 ```
 
-## Setup & Running
+## Architecture Description
+1. User uploads an image.
+2. Canvas API extracts pixel data.
+3. TensorFlow.js processes image tensor.
+4. MobileNet generates embedding vector.
+5. IndexedDB retrieves stored embeddings.
+6. Cosine similarity compares vectors.
+7. Results are ranked and displayed.
 
-1. **Host Context (Recommended):**
-   Because modern web browsers block web pages loaded via `file://` from performing fetch requests to the local directory (due to CORS/security restrictions), it is recommended to run a lightweight local file server to serve the directory.
-   
-   If you have Python installed:
-   ```bash
-   python -m http.server 8000
-   ```
-   Then navigate to `http://localhost:8000`. The application will automatically scan the `public/dataset/` folder.
+## Architecture Diagram
+(Add system architecture diagram image here)
 
-2. **Offline/Direct `file://` Mode:**
-   You can still open `index.html` directly in your browser without a server! 
-   However, the app cannot automatically crawl the `public/dataset/` folder for security reasons. Instead, the UI will prompt you to **Select Dataset Folder**. Simply point it to the `public/dataset/` directory on your hard drive, and it will index the images offline.
+---
 
-## How It Works
-- **Embeddings**: When the app initializes (or when a folder is selected), it opens each image, passes it through the MobileNet neural network, and extracts a dense vector representation (embedding) of the image features.
-- **IndexedDB**: The 1000-dimensional embedding arrays, along with the image paths, are stored in the browser's IndexedDB so they don't have to be re-calculated every time you open the app.
-- **Similarity**: When you upload a query image, its embedding is extracted on-the-fly. The system then computes the Cosine Similarity between this query embedding and all the embeddings stored in IndexedDB to find the nearest matches.
+# Dataset Selected
 
-## Technologies Used
-- HTML / CSS / Vanilla JS (ES Modules)
-- [TensorFlow.js](https://js.tensorflow.org/)
-- [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet)
-- IndexedDB (Browser Storage)
+## Dataset Name
+Fashion Product Images Dataset
+
+## Source
+Kaggle
+
+## Data Type
+- JPG / PNG product images
+- Fashion products (shoes, clothing, accessories)
+
+## Selection Reason
+- Diverse product images
+- Suitable for similarity tasks
+- Lightweight and manageable size
+
+## Preprocessing Steps
+```
+Resize images
+Convert to tensor
+Extract embeddings
+Store embeddings in IndexedDB
+```
+
+---
+
+# Model Selected
+
+## Model Name
+MobileNet
+
+## Selection Reasoning
+- Lightweight
+- Fast inference
+- Browser compatible
+- Good balance of speed and accuracy
+
+## Alternatives Considered
+- ResNet50
+- EfficientNet
+- VGG16
+
+## Evaluation Metrics
+- Cosine similarity score
+- Response time
+- Accuracy of similar results
+
+---
+
+# Technology Stack
+
+## Frontend
+- HTML
+- CSS
+- JavaScript
+- Canvas API
+
+## Backend
+No backend required (fully client-side)
+
+## ML/AI
+- TensorFlow.js
+- MobileNet
+
+## Database
+- IndexedDB
+
+## Deployment
+- GitHub Pages
+- Netlify
+- Vercel
+
+---
+
+# Installation Guide
+
+## Prerequisites
+- Node.js installed
+- Modern browser (Chrome recommended)
+
+## Setup Steps
+
+```bash
+git clone https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-.git
+cd Team-KDS-Visual-Product-Comparison-Engine-
+npm install
+npm run dev
+```
+
+## Production Build
+```bash
+npm run build
+```
+
+---
+
+# API Documentation (If Backend Added)
+
+## Endpoint 1: Upload Image
+```
+POST /upload
+```
+
+## Endpoint 2: Get Similar Products
+```
+GET /similar-products
+```
+
+## Endpoint 3: Store Embedding
+```
+POST /store-embedding
+```
+
+(Add API testing screenshots here)
+
+---
+
+# Module-wise Development & Deliverables
+
+## Checkpoint 1: Research & Planning
+- Problem analysis
+- Architecture design
+- Tech stack selection
+
+## Checkpoint 2: Backend Development
+- IndexedDB setup
+- Embedding storage logic
+
+## Checkpoint 3: Frontend Development
+- Upload interface
+- Results display
+
+## Checkpoint 4: Model Integration
+- MobileNet integration
+- Embedding extraction
+
+## Checkpoint 5: Similarity Engine
+- Cosine similarity implementation
+- Ranking system
+
+## Checkpoint 6: Deployment
+- Live hosting
+- Documentation
+
+---
+
+# End-to-End Workflow
+```
+User uploads image
+↓
+Image converted to pixels
+↓
+MobileNet generates embedding
+↓
+Stored embeddings retrieved
+↓
+Similarity computed
+↓
+Results ranked and displayed
+```
+
+---
+
+# Demo & Links
+
+Live Demo:
+
+Demo Video:
+
+GitHub Repository: https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-
+
+---
+
+# Team Roles & Responsibilities
+
+Kunal Singh Kushwaha : FrontEnd & Logic (Sorting and Cosine Similarity)
+
+Sharanyo Banerjee : Database & API integration (Kaggle and CanvasAPI)
+
+Dipesh Kumar : PPT , Questions & Miscellaneous (Video , Presentation & Helper)
+
+---
+
+# Future Scope & Scalability
+
+## Short-Term
+- Add filters and categories
+- Improve UI
+- Increase dataset size
+
+## Long-Term
+- WebGPU acceleration
+- Hybrid cloud support
+- Real-time camera search
+- Support millions of products
+
+---
+
+# Known Limitations
+- Limited by browser memory
+- Accuracy depends on dataset
+- MobileNet less accurate than heavier models
+- Local storage constraints
+
+---
+
+# Impact
+This project enables fast, private, and cost-efficient visual product search directly on user devices, reducing infrastructure costs and improving user experience while protecting data privacy.
