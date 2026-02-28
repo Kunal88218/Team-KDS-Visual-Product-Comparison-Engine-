@@ -1,0 +1,11 @@
+{
+  "name": "visual-product-comparer",
+  "version": "1.0.0",
+  "description": "Fully Offline AI Visual Similarity Search Web App",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  },
+  "author": "",
+  "license": "MIT"
+}

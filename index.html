@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Product Comparer</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/styles/style.css">
+    <!-- TensorFlow.js and MobileNet CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="gradient-text">Visual Product Comparer</h1>
+            <p>100% Offline AI Similarity Search</p>
+            <div id="status-container" class="status-container">
+                <span id="status-text" class="status-text">Initializing...</span>
+                <span id="status-loader" class="loader"></span>
+            </div>
+            <!-- Progress Bar for DB Generation -->
+            <div id="progress-container" class="progress-container hidden">
+                <div id="progress-bar" class="progress-bar"></div>
+                <div id="progress-text" class="progress-text">0 / 0 images processed</div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Left Column: Upload -->
+            <section class="upload-section glass-panel">
+                <h2>Find Similar Products</h2>
+
+                <!-- The Dropzone -->
+                <div id="dropzone" class="dropzone disabled">
+                    <div class="dropzone-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="upload-icon">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="17 8 12 3 7 8" />
+                            <line x1="12" x2="12" y1="3" y2="15" />
+                        </svg>
+                        <p>Drag & Drop an image here</p>
+                        <span class="file-divider">or</span>
+                        <label for="file-upload" class="upload-btn">Browse Files</label>
+                        <input type="file" id="file-upload" accept="image/jpeg, image/png, image/webp" hidden disabled>
+                    </div>
+                    <!-- Uploaded Image Preview -->
+                    <div id="preview-container" class="preview-container hidden">
+                        <img id="image-preview" src="" alt="Query Image">
+                        <button id="clear-upload-btn" class="clear-btn" aria-label="Clear image">×</button>
+                    </div>
+                </div>
+
+                <!-- Fallback Button if API Fetch Fails -->
+                <div id="fallback-container" class="fallback-container hidden">
+                    <div class="alert-box">
+                        <p>Browser security prevents automatic local folder scanning.</p>
+                        <label for="folder-upload" class="action-btn">Select 'public/dataset' Folder</label>
+                        <input type="file" id="folder-upload" webkitdirectory directory multiple hidden>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="search-btn" class="primary-btn" disabled>Search Similar</button>
+                </div>
+
+            </section>
+
+            <!-- Right Column: Results -->
+            <section class="results-section glass-panel">
+                <div class="results-header">
+                    <h2>Top 5 Matches</h2>
+                    <span id="match-count" class="badge">0</span>
+                </div>
+
+                <div id="results-grid" class="results-grid">
+                    <!-- Placeholder skeleton or empty state -->
+                    <div class="empty-state">
+                        <p>Upload an image to see results</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Hidden canvas for tfjs image processing if needed -->
+    <canvas id="processing-canvas" style="display: none;"></canvas>
+
+    <!-- Main Module Entry -->
+    <script type="module" src="src/js/app.js"></script>
+</body>
+
+</html>
