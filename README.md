@@ -261,11 +261,11 @@ GitHub Repository:
 
 # Team Roles & Responsibilities
 
-Kunal Singh Kushwaha : FrontEnd & Logic
+Kunal Singh Kushwaha : FrontEnd & Logic (Sorting and Cosine Similarity)
 
-Sharanyo Banerjee : Backend & Database
+Sharanyo Banerjee : Database & API integration (Kaggle and CanvasAPI)
 
-Dipesh Kumar : PPT , Questions & Miscellaneous
+Dipesh Kumar : PPT , Questions & Miscellaneous (Video , Presentation & Helper)
 
 ---
 
