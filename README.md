@@ -43,7 +43,6 @@ Computers cannot recognize images directly. They require images to be mathematic
 - Compare embeddings mathematically using Cosine Similarity
 - Rank and display visually similar products instantly
 - Ensure 100% offline functionality natively on macOS
-
 ---
 
 ## 3. Proposed Solution
@@ -88,9 +87,6 @@ User → Frontend (React/Vanilla JS) → TensorFlow.js → MobileNet → Native 
 ---
 
 ## 5. Database Design
-
-### ER Diagram
-*(Add ER diagram image here)*
 
 ### ER Diagram Description
 - Native Flat-file structure utilizing binary array buffers for ultra-fast load times.
@@ -242,9 +238,9 @@ Worker Thread Interconnect (`Web Workers API`)
 
 ## 12. Demo & Video
 
-**Live Demo Link:** *[Locally Executed Native App]*
+**Live Demo Link:** (https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-/releases/tag/Product_visualizer)
 
-**Demo Video Link:** *(Insert Demo Drive URI)*
+**Demo Video Link:** *(Drive URL will be updated soon)*
 
 **GitHub Repository:** [https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-](https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-)
 
@@ -260,11 +256,9 @@ Worker Thread Interconnect (`Web Workers API`)
 
 ## 14. Team Roles & Responsibilities
 
-| Member Name | Role | Responsibilities |
-| :--- | :--- | :--- |
-| **Kunal Singh Kushwaha** | FrontEnd & Logic | Client-Side Sorting algorithms, Core UI Development, Worker Threading, Cosine Similarity Engine |
-| **Sharanyo Banerjee** | Database & API Integration | Tauri Desktop integration, Local Flat-File Storage Logic, Web Canvas Processing pipeline, Kaggle datasets |
-| **Dipesh Kumar** | PPT & Presentation | Video conceptualization, End-to-End demonstrations, Presentation logistics, Helper functions |
+- **Kunal Kushwaha:** JS Logical Optimization , CSS Styling , PPT and Workflow , UI Optimization.
+- **Sharanyo Banerjee:** Database Integration , Mathematical Integration (L2 Normalization & Cosine Similarity) , Sorting.
+- **Dipesh Kumar:** Kaggle Data Searching , PPT and Workflow , Readme Maintaining , Data Optimization(Embedding & TensorFlow).
 
 ---
 
