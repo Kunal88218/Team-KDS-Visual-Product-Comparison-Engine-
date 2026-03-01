@@ -240,9 +240,11 @@ Worker Thread Interconnect (`Web Workers API`)
 
 **Live Demo Link:** (https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-/releases/tag/Product_visualizer)
 
-**Demo Video Link:** *(Drive URL will be updated soon)*
+**Demo Video Link:** (https://drive.google.com/file/d/15kM_GokFvIPDv38Eviv-WJMOhTCUcZCi/view?usp=sharing)
 
 **GitHub Repository:** [https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-](https://github.com/Kunal88218/Team-KDS-Visual-Product-Comparison-Engine-)
+
+**GitHub Repository:** https://www.canva.com/design/DAHCpUsRmuo/wOP7QMEn5cvzn2qBjLjHww/edit
 
 ---
 
